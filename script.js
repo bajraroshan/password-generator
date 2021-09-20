@@ -17,8 +17,16 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
 
   function generatePassword(){
     // Ask user for their choice of length
+  
     var userChoice = window.prompt("Please enter the length of characters.");
     console.log(userChoice);
+    
+    // Checking if the input is number or not
+    if(isNaN(userChoice)){
+      window.alert( "Please enter a valid Number");
+      console.log(userChoice);
+      return;
+    }
 
     // Checking whether the lenght is less than 8 and more than 128
     if(8 > userChoice || userChoice > 128){
@@ -54,7 +62,7 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
 
     // Adding in array if user includes Lowercase Alphabet
     if(confirmLowercase){
-      ppchar = ppchar.concat(upperAlphabet);
+      ppchar = ppchar.concat(lowerAlphabet);
       console.log(ppchar);
     }
 
