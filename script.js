@@ -21,6 +21,11 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
     var userChoice = window.prompt("Please enter the length of characters.");
     console.log(userChoice);
     
+    // Checking if user hits cancel
+    if (userChoice == null) {
+      return;
+    }
+
     // Checking if the input is number or not
     if(isNaN(userChoice)){
       window.alert( "Please enter a valid Number");
