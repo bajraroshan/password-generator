@@ -17,26 +17,28 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
 
   function generatePassword(){
     // Ask user for their choice of length
+
+    var tyrAgainMessage = "PLEASE TRY AGAIN";
   
     var userChoice = window.prompt("Please enter the length of characters.");
     console.log(userChoice);
     
     // Checking if user hits cancel
     if (userChoice == null) {
-      return;
+      return tyrAgainMessage;
     }
 
     // Checking if the input is number or not
     if(isNaN(userChoice)){
       window.alert( "Please enter a valid Number");
       console.log(userChoice);
-      return;
+      return tyrAgainMessage;
     }
 
     // Checking whether the lenght is less than 8 and more than 128
     if(8 > userChoice || userChoice > 128){
       window.alert( "Password should be atleast 8 characters and no more than 128 characters");
-      return;
+      return tyrAgainMessage;
     }
 
     // Confirming if user wants to use lowercase alphabet in the password.
