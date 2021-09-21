@@ -1,11 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Array define for seperate variables
 var char = [' ', '!', '”', '#', '$', '%', '&', '’', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~' ];
 var lowerAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var upperAlphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
+// Defining Object to store generated password
+var passwordCharacters = [];
+var selectionCount = 0;
 var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
 
 // Write password to the #password input
@@ -16,10 +19,10 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
   passwordText.value = password;
 
   function generatePassword(){
-    // Ask user for their choice of length
-
+    // Try Again Message
     var tyrAgainMessage = "PLEASE TRY AGAIN";
-  
+    
+    // Ask user for their choice of length
     var userChoice = window.prompt("Please enter the length of characters.");
     console.log(userChoice);
     
@@ -71,29 +74,74 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
     if(confirmLowercase){
       ppchar = ppchar.concat(lowerAlphabet);
       console.log(ppchar);
+      
+      // Getting 1 random lowercase Alphabet
+      var initialInput = lowerAlphabet[Math.floor(Math.random() * lowerAlphabet.length)];
+      console.log(initialInput);
+
+      // Inserting that random alphabet in passwordcharacter array
+      passwordCharacters += initialInput + "";
+      console.log(passwordCharacters);
+
+      // Counting true condition
+      selectionCount++;
     }
 
     // Adding in array if user includes Uppercase Alphabet
     if(confirmUppercase){
       ppchar = ppchar.concat(upperAlphabet);
       console.log(ppchar);
+
+      // Getting 1 random Uppercase Alphabet
+      var initialInput = upperAlphabet[Math.floor(Math.random() * upperAlphabet.length)];
+      console.log(initialInput);
+
+      // Inserting that random alphabet in passwordcharacter array
+      passwordCharacters += initialInput + "";
+      console.log(passwordCharacters);
+      
+      // Counting true condition
+      selectionCount++;
     }
 
     // Adding in array if user includes Numbers
     if(confirmNumeric){
       ppchar = ppchar.concat(number);
       console.log(ppchar);
+
+      // Getting 1 random Number
+      var initialInput = number[Math.floor(Math.random() * number.length)];
+      console.log(initialInput);
+      
+      // Inserting that random alphabet in passwordcharacter array
+      passwordCharacters += initialInput + "";
+      console.log(passwordCharacters);
+      
+      // Counting true condition
+      selectionCount++;
     }
 
     // Adding in array if user includes Special Characters
     if(confirmSpecialchar){
       ppchar = ppchar.concat(char);
       console.log(ppchar);
+
+      // Getting 1 random Character
+      var initialInput = char[Math.floor(Math.random() * char.length)];
+      console.log(initialInput);
+      
+      // Inserting that random alphabet in passwordcharacter array
+      passwordCharacters += initialInput + "";
+      console.log(passwordCharacters);
+      
+      // Counting true condition
+      selectionCount++;
     }
 
-    // Defining Object to store generated password
-    var passwordCharacters = [];
+    
+    console.log(selectionCount);
 
+    // Loop to generate random character from combined array
     for (var i = 0; i < userChoice; i++) {
       var characterCode = ppchar[Math.floor(Math.random() * ppchar.length)];
       console.log(characterCode);
@@ -102,7 +150,16 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
     
     // Returning the newly generated Password
     console.log(passwordCharacters);
-    return passwordCharacters;
+
+    // Removing the n number of character from generated character
+    passwordCharacters = passwordCharacters.slice(0, - + selectionCount);
+    console.log(passwordCharacters);
+
+    // Shuffling the character
+    var finalPassword = passwordCharacters.split('').sort(function(){return 0.5-Math.random()}).join('');
+
+    console.log(finalPassword);
+    return finalPassword;
   }
 
 }
