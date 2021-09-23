@@ -8,7 +8,7 @@ This is basic password gererator which allows the user to generate to password a
 ![Password Generator Page with Password](https://github.com/bajraroshan/password-generator/blob/master/Assets/Password-Generator-with-password.png)
 
 ## Important Links
-Github Page: https://bajraroshan.github.io/password-generator///<br/>
+Github Page: https://bajraroshan.github.io/password-generator/<br/>
 Github Repositories: https://github.com/bajraroshan/password-generator
 
 ## Things done in this project
