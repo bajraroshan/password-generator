@@ -4,8 +4,8 @@
 This is basic password gererator which allows the user to generate to password according to their need such as including Lowercase Alphabet, Uppercase Alphabet, Number and Characters. 
 
 ## Demo
-![Default Password Generator Page](https://bajraroshan.github.io/password-generator/assets/Password-Generator.png)
-![Password Generator Page with Password](https://bajraroshan.github.io/password-generator/assets/03-javascript-homework-demo.png)
+![Default Password Generator Page](https://github.com/bajraroshan/password-generator/blob/master/Assets/Password-Generator.png)
+![Password Generator Page with Password](https://github.com/bajraroshan/password-generator/blob/master/Assets/Password-Generator-with-password.png)
 
 ## Important Links
 Github Page: https://bajraroshan.github.io/password-generator///<br/>
