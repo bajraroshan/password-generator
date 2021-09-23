@@ -68,7 +68,7 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
 
     // Defining Object to store the array according to user's choice
     var ppchar = [];
-    console.log(ppchar);
+    // console.log(ppchar);
 
     // Adding in array if user includes Lowercase Alphabet
     if(confirmLowercase){
@@ -81,7 +81,7 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
 
       // Inserting that random alphabet in passwordcharacter array
       passwordCharacters += initialInput + "";
-      console.log(passwordCharacters);
+      // console.log(passwordCharacters);
 
       // Counting true condition
       selectionCount++;
@@ -94,7 +94,7 @@ var confirmLowercase, confirmUppercase, confirmNumeric, confirmSpecialchar;
 
       // Getting 1 random Uppercase Alphabet
       var initialInput = upperAlphabet[Math.floor(Math.random() * upperAlphabet.length)];
-      console.log(initialInput);
+      // console.log(initialInput);
 
       // Inserting that random alphabet in passwordcharacter array
       passwordCharacters += initialInput + "";
